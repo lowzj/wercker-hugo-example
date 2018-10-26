@@ -21,6 +21,8 @@ build:
     # https://devcenter.wercker.com/development/steps/
 
   steps:
+    - install-packages:
+        packages: git
     - script:
         name: download hugo theme
         cwd: example/themes
