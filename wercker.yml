@@ -19,12 +19,12 @@ build:
     # Steps make up the actions in your pipeline
     # Read more about steps on our dev center:
     # https://devcenter.wercker.com/development/steps/
-  scripts:
-    - name: download hugo theme
-    - cwd: example/themes
-    - code: git clone https://github.com/budparr/gohugo-theme-ananke.git ananke
 
   steps:
+    - script:
+        name: download hugo theme
+        cwd: example/themes
+        code: git clone https://github.com/budparr/gohugo-theme-ananke.git ananke
     - arjen/hugo-build:
         basedir: "example"
         version: "0.47"
